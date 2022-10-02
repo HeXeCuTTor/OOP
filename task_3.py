@@ -29,7 +29,7 @@ class Student:
         if not isinstance(other, Student):
             print('Невозможно сравнить!')
             return
-        return self.grades < other.grades
+        return self.mid_grade < other.mid_grade
   
 class Mentor:
     def __init__(self, name, surname):
@@ -53,7 +53,7 @@ class Lecturer(Mentor):
         if not isinstance(other, Lecturer):
             print('Невозможно сравнить!')
             return
-        return self.grades < other.grades
+        return self.mid_grade < other.mid_grade
 
 class Reviewer(Mentor):
     def __init__(self, name, surname):
