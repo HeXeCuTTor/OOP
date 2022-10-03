@@ -17,7 +17,7 @@ class Student:
             return 'Ошибка'
 
     def _middle_grade(self):
-        self.mid_grade = sum(self.grades.values())/len(self.grades.values())
+        self.mid_grade = sum(sum(self.grades.values(),[]))/len(self.grades.values())
 
     def __str__(self):
         return (f'Имя: {self.name}\n'
@@ -43,7 +43,7 @@ class Lecturer(Mentor):
         self.grades = {}
 
     def _middle_grade(self):
-        self.mid_grade = sum(self.grades.values())/len(self.grades.values())
+        self.mid_grade = sum(sum(self.grades.values(),[]))/len(self.grades.values())
 
     def __str__(self):
         res = f'Имя: {self.name}\nФамилия: {self.surname}\nСредняя оценка за лекции: {self._middle_grade()}'
