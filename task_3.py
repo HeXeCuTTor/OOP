@@ -46,7 +46,7 @@ class Lecturer(Mentor):
         self.mid_grade = sum(self.grades.values())/len(self.grades.values())
 
     def __str__(self):
-        res = f'Имя: {self.name}\nФамилия: {self.surname}\nСредняя оценка за лекции: {self._middle_grade}'
+        res = f'Имя: {self.name}\nФамилия: {self.surname}\nСредняя оценка за лекции: {self._middle_grade()}'
         return res    
     
     def __lt__(self, other):
@@ -75,16 +75,17 @@ class Reviewer(Mentor):
 some_student = Student('Ruoy', 'Eman', 'your_gender')
 some_student.courses_in_progress += ['Python','Git']
 some_student.finished_courses += ['Введение в программирование']
-print(some_student)
 
 some_lecturer = Lecturer('Some', 'Buddy')
 some_lecturer.courses_attached += ['Python']
-print(some_lecturer)
 
 some_reviewer = Reviewer('Some', 'Buddy')
 some_reviewer.courses_attached += ['Python']
-print(some_reviewer)
 
-some_reviewer.rate_hw(some_student, 'Python', 9,9)
-some_reviewer.rate_hw(some_student, 'Python', 9,9)
-some_reviewer.rate_hw(some_student, 'Python', 9,9)
+some_reviewer.rate_hw(some_student, 'Python', 9.9)
+some_reviewer.rate_hw(some_student, 'Python', 9.9)
+some_reviewer.rate_hw(some_student, 'Python', 9.9)
+
+print(some_reviewer)
+print(some_lecturer)
+print(some_student)
